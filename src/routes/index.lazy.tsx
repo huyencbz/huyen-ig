@@ -9,14 +9,18 @@ export const Route = createLazyFileRoute("/")({
 
 function Index() {
   return (
-    <div className="flex flex-col items-center h-screen justify-center">
-      <img className="mb-10" src={logo}></img>
-      <div className=" flex flex-col gap-2 mb-2 items-center">
-        <Avatar size="medium" />
-        <span className="text-xs">huyencute</span>
+    <div className="flex items-center h-screen justify-center">
+      <div className="flex flex-col items-center justify-center w-2/3">
+        <img className="mb-10" src={logo}></img>
+        <div className=" flex flex-col gap-2 mb-2 items-center">
+          <Avatar size="large" />
+          <span className="text-sm">huyen_cute</span>
+        </div>
+        <Button isBlock>Login</Button>
+        <a className="mt-6 text-sm" href="#">
+          Switch accounts
+        </a>
       </div>
-      <Button>Login</Button>
-      <a href="#">Switch accounts</a>
     </div>
   );
 }

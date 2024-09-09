@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
 export interface ButtonProps {
   children?: ReactNode;
+  isBlock?: boolean;
 }
-export const Button = ({ children }: ButtonProps) => {
+export const Button = ({ children, isBlock }: ButtonProps) => {
   return (
     <button
       type="button"
-      className="bg-blue-500 hover:bg-blue-500 text-white text-sm py-2 px-32 border-blue-700 rounded"
+      className={`${isBlock ? "w-full" : ""} bg-blue-500 hover:bg-blue-700 text-white text-sm py-2 px-2 border-blue-700 rounded`}
     >
       {children}
     </button>

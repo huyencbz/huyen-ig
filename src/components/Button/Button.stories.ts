@@ -9,8 +9,15 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
     children: "Log in",
+  },
+};
+
+export const Block: Story = {
+  args: {
+    children: "Log in",
+    isBlock: true,
   },
 };
