@@ -3,6 +3,7 @@ import logo from "../assets/logo.svg";
 import { Avatar } from "../components/Avatar/Avatar";
 import { Button } from "../components/Button/Button";
 import { Divider } from "../components/Divider/Divider";
+import { TextInput } from "../components/TextInput/TextInput";
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -14,19 +15,9 @@ function Login() {
       <div className="flex items-center flex-col h-screen justify-center text-sm">
         <div className="flex flex-col items-center justify-center w-full">
           <img className="mb-10" src={logo}></img>
-          <form className=" flex flex-col mb-2 items-center w-2/3">
-            <input
-              className="border rounded mb-2 w-full py-2 px-3 text-gray-700 focus:outline-none"
-              id="username"
-              type="text"
-              placeholder="Username"
-            />
-            <input
-              className="border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 focus:outline-none"
-              id="password"
-              type="password"
-              placeholder="Password"
-            />
+          <form className=" flex flex-col mb-2 gap-2 items-center w-2/3">
+            <TextInput isBlock placeholder="Username" type="text" />
+            <TextInput isBlock placeholder="Password" type="password" />
             <div className="self-end mb-8">
               <a className="text-xs text-blue-500 hover:text-blue-800" href="#">
                 Forgot password?
