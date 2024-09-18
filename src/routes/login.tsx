@@ -35,8 +35,8 @@ function Login() {
       </div>
       <div className="relative bg-blue-500">
         <div className="absolute inset-x-0 bottom-0 h-24">
-          <Divider />
-          <div className="text-sm mt-4 text-center text-gray-400">
+          <Divider label="OR" />
+          <div className="text-xs mt-4 text-center text-gray-400">
             Don't have an account? <a href="#">Sign up</a>
           </div>
         </div>
