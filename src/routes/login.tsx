@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "../assets/logo.svg";
-import { Avatar } from "../components/Avatar/Avatar";
+import facebook from "../assets/facebook.svg";
 import { Button } from "../components/Button/Button";
 import { Divider } from "../components/Divider/Divider";
 import { TextInput } from "../components/TextInput/TextInput";
@@ -14,8 +14,8 @@ function Login() {
     <>
       <div className="flex items-center flex-col h-screen justify-center text-sm">
         <div className="flex flex-col items-center justify-center w-full">
-          <img className="mb-10" src={logo}></img>
-          <form className=" flex flex-col mb-2 gap-2 items-center w-2/3">
+          <img className="mb-10" alt="instagram" src={logo}></img>
+          <form className=" flex flex-col mb-8 gap-2 items-center w-2/3">
             <TextInput isBlock placeholder="Username" type="text" />
             <TextInput isBlock placeholder="Password" type="password" />
             <div className="self-end mb-8">
@@ -25,9 +25,12 @@ function Login() {
             </div>
             <Button isBlock>Login</Button>
           </form>
-          <a className="mt-6 text-sm" href="#">
-            Switch accounts
-          </a>
+          <div className="flex gap-2 items-center">
+            <img src={facebook} alt="facebook" />
+            <a className="text-xs" href="#">
+              Switch accounts
+            </a>
+          </div>
         </div>
       </div>
       <div className="relative bg-blue-500">
