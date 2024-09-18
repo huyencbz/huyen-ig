@@ -12,3 +12,8 @@ type Story = StoryObj<typeof Divider>;
 export const Normal: Story = {
   args: {},
 };
+export const Label: Story = {
+  args: {
+    label: "OR",
+  },
+};
