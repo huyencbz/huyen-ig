@@ -1,14 +1,17 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface TextInputProps extends HTMLInputElement {
+interface TextInputProps {
   isBlock?: boolean;
   invalid?: boolean;
+  placeholder?: string;
+  type: string;
 }
 export const TextInput: FC<TextInputProps> = ({
   isBlock,
   invalid,
-  ...props
+  placeholder,
+  type,
 }) => {
   return (
     <input
@@ -17,7 +20,8 @@ export const TextInput: FC<TextInputProps> = ({
         isBlock && "w-full",
         invalid && "border-red-500 ",
       )}
-      {...props}
+      placeholder={placeholder}
+      type={type}
     />
   );
 };

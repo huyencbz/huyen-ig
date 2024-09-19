@@ -1,5 +1,5 @@
 import "../../index.css";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 interface AvatarProps {
   size?: "small" | "medium" | "large";
@@ -13,7 +13,7 @@ const sizeMap = {
 export const Avatar: FC<AvatarProps> = ({ size }) => {
   return (
     <img
-      className={`${sizeMap[size]} rounded-full`}
+      className={`${sizeMap[size!]} rounded-full`}
       src="https://randomuser.me/api/portraits/men/35.jpg"
       alt="Rounded avatar"
     ></img>
