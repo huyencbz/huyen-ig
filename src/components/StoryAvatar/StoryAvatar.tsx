@@ -31,7 +31,7 @@ export const StoryAvatar: FC<StoryAvatarProps> = ({
       >
         <Avatar
           size="medium"
-          isOutline="true"
+          isOutline
           className={twMerge(
             "outline outline-white",
             isRead ? "outline-3" : "outline-2",

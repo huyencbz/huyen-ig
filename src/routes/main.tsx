@@ -4,7 +4,6 @@ import logo from "../assets/logo.svg";
 import camera from "../assets/camera.svg";
 import share from "../assets/share.svg";
 import feed from "../assets/feed.svg";
-import { Avatar } from "../components/Avatar/Avatar";
 import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 export const Route = createFileRoute("/main")({
   component: () => (
