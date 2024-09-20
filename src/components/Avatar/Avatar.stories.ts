@@ -11,5 +11,6 @@ type Story = StoryObj<typeof Avatar>;
 export const Sample: Story = {
   args: {
     size: "medium",
+    src: "https://randomuser.me/api/portraits/men/35.jpg",
   },
 };

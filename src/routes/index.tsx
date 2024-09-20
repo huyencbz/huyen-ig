@@ -15,7 +15,10 @@ function Index() {
         <div className="flex flex-col items-center justify-center w-2/3">
           <img className="mb-10" src={logo}></img>
           <div className=" flex flex-col gap-2 mb-2 items-center">
-            <Avatar size="large" />
+            <Avatar
+              size="large"
+              src="https://randomuser.me/api/portraits/men/35.jpg"
+            />
             <span className="text-sm">huyen_cute</span>
           </div>
           <Button isBlock>Login</Button>

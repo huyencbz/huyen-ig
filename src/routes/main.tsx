@@ -4,6 +4,8 @@ import logo from "../assets/logo.svg";
 import camera from "../assets/camera.svg";
 import share from "../assets/share.svg";
 import feed from "../assets/feed.svg";
+import { Avatar } from "../components/Avatar/Avatar";
+import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 export const Route = createFileRoute("/main")({
   component: () => (
     <div>
@@ -17,11 +19,35 @@ export const Route = createFileRoute("/main")({
             <div className="flex items-center gap-4 ">
               <a href="/">
                 <img src={feed} alt="feed" />
-                <span className="absolute bg-red-500 rounded w-2 h-2 top-4 right-14" />
+                <span className="absolute bg-red-500 rounded w-2 h-2 top-[14px] right-[54px]" />
               </a>
               <a href="/">
                 <img src={share} alt="share" />
               </a>
+            </div>
+          </div>
+          <Divider />
+          <div className="flex gap-4 px-2">
+            <div className="flex flex-col justify-center">
+              <StoryAvatar
+                isAdd
+                src="https://randomuser.me/api/portraits/men/35.jpg"
+              />
+              <div className="text-xs text-center">Your story</div>
+            </div>
+            <div className="flex flex-col justify-center">
+              <StoryAvatar
+                isLive
+                src="https://randomuser.me/api/portraits/women/33.jpg"
+              />
+              <div className="text-xs text-center">A</div>
+            </div>
+            <div className="flex flex-col justify-center">
+              <StoryAvatar
+                isRead
+                src="https://randomuser.me/api/portraits/men/54.jpg"
+              />
+              <div className="text-xs text-center">B</div>
             </div>
           </div>
           <Divider />

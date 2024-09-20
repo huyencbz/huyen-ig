@@ -1,8 +1,11 @@
-import "../../index.css";
 import { FC } from "react";
+import { twMerge } from "tailwind-merge";
 
-interface AvatarProps {
+export interface AvatarProps {
   size?: "small" | "medium" | "large";
+  isOutline?: boolean;
+  className?: string;
+  src: string;
 }
 
 const sizeMap = {
@@ -10,11 +13,11 @@ const sizeMap = {
   medium: "w-16 h-16",
   large: "w-20 h-20",
 };
-export const Avatar: FC<AvatarProps> = ({ size }) => {
+export const Avatar: FC<AvatarProps> = ({ size, className, src }) => {
   return (
     <img
-      className={`${sizeMap[size!]} rounded-full`}
-      src="https://randomuser.me/api/portraits/men/35.jpg"
+      className={twMerge("rounded-full", sizeMap[size!], className)}
+      src={src}
       alt="Rounded avatar"
     ></img>
   );
