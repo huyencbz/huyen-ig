@@ -13,8 +13,8 @@ const author = {
 };
 export const Route = createFileRoute("/main")({
   component: () => (
-    <div>
-      <div className="absolute inset-y-0 w-full">
+    <div className="relative">
+      <div className="fixed fixed inset-y-0 w-full z-50 h-12 bg-white">
         <div className="flex flex-col gap-2 ">
           <div className="flex items-center space-x-12 px-4 pt-2">
             <a href="/">
