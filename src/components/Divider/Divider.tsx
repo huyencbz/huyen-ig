@@ -13,5 +13,5 @@ export const Divider: FC<DividerProps> = ({ label }) => {
       </div>
     );
   }
-  return <div className="border border-gray-100"></div>;
+  return <div className="border-t border-gray-100"></div>;
 };

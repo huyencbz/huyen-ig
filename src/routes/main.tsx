@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Divider } from "../components/Divider/Divider";
 import logo from "../assets/logo.svg";
 import camera from "../assets/camera.svg";
 import share from "../assets/share.svg";
@@ -13,25 +12,22 @@ const author = {
 };
 export const Route = createFileRoute("/main")({
   component: () => (
-    <div className="relative">
-      <div className="fixed fixed inset-y-0 w-full z-50 h-12 bg-white">
-        <div className="flex flex-col gap-2 ">
-          <div className="flex items-center space-x-12 px-4 pt-2">
-            <a href="/">
-              <img src={camera} alt="camera" />
+    <>
+      <div className="flex justify-center fixed top-0 left-0 right-0 z-50 h-12">
+        <div className="flex items-center px-4 grow max-w-[500px] bg-white border-b">
+          <a href="/">
+            <img src={camera} alt="camera" />
+          </a>
+          <img src={logo} alt="instagram" className="h-8 grow" />
+          <div className="flex items-center gap-4 ">
+            <a className="relative" href="/">
+              <img src={feed} alt="feed" />
+              <span className="absolute bg-red-500 rounded w-2 h-2 top-[3px] right-[-1px]" />
             </a>
-            <img src={logo} alt="instagram" className="h-8 grow" />
-            <div className="flex items-center gap-4 ">
-              <a href="/">
-                <img src={feed} alt="feed" />
-                <span className="absolute bg-red-500 rounded w-2 h-2 top-[14px] right-[54px]" />
-              </a>
-              <a href="/">
-                <img src={share} alt="share" />
-              </a>
-            </div>
+            <a href="/">
+              <img src={share} alt="share" />
+            </a>
           </div>
-          <Divider />
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -61,6 +57,6 @@ export const Route = createFileRoute("/main")({
         <Post author={author} />
         <Post author={author} />
       </div>
-    </div>
+    </>
   ),
 });
