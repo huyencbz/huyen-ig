@@ -1,5 +1,5 @@
 import { Avatar } from "../Avatar/Avatar";
-import official from "../../assets/official.svg";
+import Official from "../../assets/official.svg?react";
 import { FC } from "react";
 import { Author } from "./type";
 interface HeaderProps {
@@ -15,7 +15,7 @@ export const Header: FC<HeaderProps> = ({ author, location }) => {
           <div>
             <div className="flex gap-1 items-center">
               <div className="text-xs font-bold">joshua_l</div>
-              {author.isOfficial && <img src={official} alt="official" />}
+              {author.isOfficial && <Official />}
             </div>
             {location && <div className="text-xs">Tokyo, Japan</div>}
           </div>

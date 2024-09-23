@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "../assets/logo.svg";
-import camera from "../assets/camera.svg";
-import share from "../assets/share.svg";
-import feed from "../assets/feed.svg";
+import Logo from "../assets/logo.svg?react";
+import Camera from "../assets/camera.svg?react";
+import Share from "../assets/share.svg?react";
+import Feed from "../assets/feed.svg?react";
 import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 import { Post } from "../components/Post/Post";
 const author = {
@@ -15,18 +15,14 @@ export const Route = createFileRoute("/main")({
     <>
       <div className="flex justify-center fixed top-0 left-0 right-0 z-50 h-12">
         <div className="flex items-center px-4 grow max-w-[500px] bg-white border-b">
-          <a href="/">
-            <img src={camera} alt="camera" />
-          </a>
-          <img src={logo} alt="instagram" className="h-8 grow" />
+          <Camera />
+          <Logo className="h-8 grow" />
           <div className="flex items-center gap-4 ">
-            <a className="relative" href="/">
-              <img src={feed} alt="feed" />
+            <div className="relative">
+              <Feed />
               <span className="absolute bg-red-500 rounded w-2 h-2 top-[3px] right-[-1px]" />
-            </a>
-            <a href="/">
-              <img src={share} alt="share" />
-            </a>
+            </div>
+            <Share />
           </div>
         </div>
       </div>

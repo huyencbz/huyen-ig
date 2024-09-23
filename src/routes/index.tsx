@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg?react";
 import { Avatar } from "../components/Avatar/Avatar";
 import { Button } from "../components/Button/Button";
 import { Divider } from "../components/Divider/Divider";
@@ -13,7 +13,7 @@ function Index() {
     <>
       <div className="flex items-center flex-col h-screen justify-center">
         <div className="flex flex-col items-center justify-center w-2/3">
-          <img className="mb-10" src={logo}></img>
+          <Logo className="mb-12" />
           <div className=" flex flex-col gap-2 mb-2 items-center">
             <Avatar
               size="large"

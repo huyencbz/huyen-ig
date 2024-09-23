@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg?react";
 import facebook from "../assets/facebook.svg";
 import { Button } from "../components/Button/Button";
 import { Divider } from "../components/Divider/Divider";
@@ -13,7 +13,7 @@ function Login() {
   return (
     <>
       <div className="flex h-screen justify-center flex-col items-center text-sm">
-        <img className="mb-10" alt="instagram" src={logo}></img>
+        <Logo className="mb-12" />
         <form className="flex flex-col mb-8 gap-2 items-center w-2/3">
           <TextInput isBlock placeholder="Username" type="text" />
           <TextInput isBlock placeholder="Password" type="password" />
