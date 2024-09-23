@@ -2,13 +2,14 @@ import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface AvatarProps {
-  size?: "small" | "medium" | "large";
+  size?: "x_small" | "small" | "medium" | "large";
   isOutline?: boolean;
   className?: string;
   src: string;
 }
 
 const sizeMap = {
+  x_small: "w-6 h-6",
   small: "w-10 h-10",
   medium: "w-16 h-16",
   large: "w-20 h-20",
