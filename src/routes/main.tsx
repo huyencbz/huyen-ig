@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Post } from "../components/Post/Post";
 import { Toolbar } from "../components/Toolbar/Toolbar";
 import { Header } from "../components/Header/Header";
 import { StoryList } from "../components/StoryList/StoryList";
+import { PostList } from "../components/PostList/PostList";
 const author = {
   name: "joshua_l",
   isOfficial: true,
@@ -51,14 +51,41 @@ const listUser = [
   },
 ];
 
+const postList = [
+  {
+    author: author,
+    location: "Tokyo, Japan",
+    content: {
+      caption: "The game in Japan was amazing and I want to share some photos",
+      source: "https://picsum.photos/900",
+    },
+    like: {
+      by: author,
+      count: 44686,
+    },
+  },
+  {
+    author: author,
+    location: "Tokyo, Japan",
+    content: {
+      caption:
+        "The game in Japan was amazing and I want to share some photos. The game in Japan was amazing and I want to share some photos",
+      source: "https://picsum.photos/900",
+    },
+    like: {
+      by: author,
+      count: 44686,
+    },
+  },
+];
+
 export const Route = createFileRoute("/main")({
   component: () => (
     <>
       <Header />
       <div className="flex flex-col gap-2 mb-16">
         <StoryList listUser={listUser} />
-        <Post author={author} />
-        <Post author={author} />
+        <PostList items={postList} />
       </div>
       <Toolbar avatar={author.avatar} />
     </>
