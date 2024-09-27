@@ -1,4 +1,3 @@
-import { Avatar } from "../Avatar/Avatar";
 import { FC } from "react";
 import { Author } from "./type";
 
@@ -19,17 +18,14 @@ export const Description: FC<DescriptionProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-1 px-4">
-      <div className="flex gap-2 items-center">
-        <Avatar src={likedBy.avatar} size="small" />
-        <div className="text-xs">
-          Liked by <span className="font-bold">{likedBy.name}</span>{" "}
-          {likeCount && <span>and {likeCount} others</span>}
-        </div>
+      <div className="text-xs">
+        Liked by <span className="font-bold">{likedBy.name}</span>{" "}
+        {likeCount && <span>and {likeCount} others</span>}
       </div>
       {caption && (
-        <div className="text-xs">
+        <div className="text-xs ">
           <span className="font-bold">{author.name}</span>
-          <span>{caption}</span>
+          <span className="ml-2">{caption}</span>
         </div>
       )}
     </div>

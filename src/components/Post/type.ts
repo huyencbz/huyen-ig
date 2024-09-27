@@ -3,3 +3,10 @@ export interface Author {
   isOfficial?: boolean;
   avatar: string;
 }
+
+export interface StoryUser {
+  userInfo: Author;
+  isLive?: boolean;
+  isAdd?: boolean;
+  isRead?: boolean;
+}
