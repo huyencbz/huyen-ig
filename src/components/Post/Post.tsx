@@ -4,12 +4,13 @@ import { Action } from "./Actions";
 import { Description } from "./Description";
 import { Author } from "./type";
 import { Divider } from "../Divider/Divider";
+import { Slider } from "../Slider/Slider";
 export interface PostProps {
   author: Author;
   location?: string;
   content: {
     caption?: string;
-    source: string;
+    source: string[];
   };
   like?: {
     by: Author;
@@ -21,7 +22,11 @@ export const Post: FC<PostProps> = ({ author, location, content, like }) => {
     <div className="flex flex-col gap-2">
       <Divider />
       <Header author={author} location={location} />
-      <img src={content.source} alt="content" />
+      {content.source.length > 1 ? (
+        <Slider source={content.source}></Slider>
+      ) : (
+        <img src={content.source[0]} alt="content" />
+      )}
       <Action />
       <Description
         likedBy={like!.by}

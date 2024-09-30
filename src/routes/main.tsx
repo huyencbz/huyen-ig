@@ -57,7 +57,7 @@ const postList = [
     location: "Tokyo, Japan",
     content: {
       caption: "The game in Japan was amazing and I want to share some photos",
-      source: "https://picsum.photos/900",
+      source: ["https://picsum.photos/900"],
     },
     like: {
       by: author,
@@ -70,7 +70,12 @@ const postList = [
     content: {
       caption:
         "The game in Japan was amazing and I want to share some photos. The game in Japan was amazing and I want to share some photos",
-      source: "https://picsum.photos/900",
+      source: [
+        "https://picsum.photos/id/10/900/900",
+        "https://picsum.photos/id/11/900/900",
+        "https://picsum.photos/id/12/900/900",
+        "https://picsum.photos/id/13/900/900",
+      ],
     },
     like: {
       by: author,
