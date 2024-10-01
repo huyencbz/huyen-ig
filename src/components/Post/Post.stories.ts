@@ -22,7 +22,7 @@ export const Sample: Story = {
     content: {
       caption:
         "The game in Japan was amazing and I want to share some photos. The game in Japan was amazing and I want to share some photos",
-      source: "https://picsum.photos/900",
+      source: ["https://picsum.photos/900"],
     },
     like: {
       by: {
