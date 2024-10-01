@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-    a {
-        @apply text-blue-500 hover:text-blue-700
-    }
+  a {
+    @apply text-blue-500 hover:text-blue-700;
+  }
+}
+.swiper {
+  --swiper-theme-color: #fae6ef;
+  --swiper-pagination-color: var(--swiper-theme-color);
+  --swiper-navigation-size: 24px;
 }

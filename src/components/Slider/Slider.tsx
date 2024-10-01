@@ -16,7 +16,7 @@ export const Slider: FC<SliderProps> = ({ source }) => {
       pagination={{
         dynamicBullets: true,
       }}
-      navigation={true}
+      navigation
       modules={[Pagination, Navigation]}
     >
       {source.map((item, index) => (
