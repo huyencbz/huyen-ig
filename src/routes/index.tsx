@@ -1,4 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  useNavigate,
+} from "@tanstack/react-router";
 import Logo from "../assets/logo.svg?react";
 import { Avatar } from "../components/Avatar/Avatar";
 import { Button } from "../components/Button/Button";
@@ -9,6 +13,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex items-center flex-col h-screen justify-center">
@@ -21,7 +27,14 @@ function Index() {
             />
             <span className="text-sm">huyen_cute</span>
           </div>
-          <Button isBlock>Login</Button>
+          <Button
+            isBlock
+            onClick={() => {
+              navigate({ to: "/main" });
+            }}
+          >
+            Login
+          </Button>
           <Link className="mt-6 text-sm" to="/">
             Switch accounts
           </Link>

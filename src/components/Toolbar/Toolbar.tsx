@@ -7,6 +7,7 @@ import HomeActive from "../../assets/home_active.svg?react";
 import SearchActive from "../../assets/search_active.svg?react";
 import { FC } from "react";
 import { Avatar } from "../Avatar/Avatar";
+import { Link } from "@tanstack/react-router";
 
 interface ToolbarProps {
   avatar: string;
@@ -25,11 +26,31 @@ export const Toolbar: FC<ToolbarProps> = ({
   return (
     <div className="flex justify-center fixed bottom-0 left-0 right-0 z-50 h-14">
       <div className="flex items-center justify-between grow max-w-[340px] bg-[#fafafa] px-6 py-4 border-t">
-        {atHomeScreen ? <HomeActive /> : <Home />}
-        {atSearchScreen ? <SearchActive /> : <Search />}
+        {atHomeScreen ? (
+          <HomeActive />
+        ) : (
+          <Link to="/main">
+            <Home className="text-black" />
+          </Link>
+        )}
+
+        {atSearchScreen ? (
+          <SearchActive />
+        ) : (
+          <Link to="/explore">
+            <Search className="text-black" />
+          </Link>
+        )}
+
         <AddPost />
         {atLikeScreen ? <LikeActive /> : <Like />}
-        <Avatar size="x_small" atToolbar={atUserScreen} src={avatar} />
+        {atUserScreen ? (
+          <Avatar size="x_small" src={avatar} atToolbar />
+        ) : (
+          <Link to="/profile">
+            <Avatar size="x_small" src={avatar} />
+          </Link>
+        )}
       </div>
     </div>
   );
