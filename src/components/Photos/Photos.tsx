@@ -27,7 +27,7 @@ export const Photos: FC<PhotosProps> = ({ sources }) => {
               src={src.source}
               alt="src"
             />
-            {src.isGallery && <Gallery className="absolute top-4 right-4" />}
+            {src.isGallery && <Gallery className="absolute top-2 right-2" />}
           </div>
         );
       })}
