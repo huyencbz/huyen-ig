@@ -12,5 +12,6 @@ type Story = StoryObj<typeof Toolbar>;
 export const Normal: Story = {
   args: {
     avatar: "https://randomuser.me/api/portraits/men/88.jpg",
+    atUserScreen: true,
   },
 };

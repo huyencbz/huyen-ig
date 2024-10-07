@@ -75,7 +75,10 @@ function Explore() {
         <Search />
       </div>
       <Photos sources={sources} />
-      <Toolbar avatar="https://randomuser.me/api/portraits/men/88.jpg" />
+      <Toolbar
+        avatar="https://randomuser.me/api/portraits/men/88.jpg"
+        atSearchScreen
+      />
     </>
   );
 }

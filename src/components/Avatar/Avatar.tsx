@@ -6,6 +6,7 @@ export interface AvatarProps {
   isOutline?: boolean;
   className?: string;
   src: string;
+  atToolbar?: boolean;
 }
 
 const sizeMap = {
@@ -14,7 +15,27 @@ const sizeMap = {
   medium: "w-16 h-16",
   large: "w-20 h-20",
 };
-export const Avatar: FC<AvatarProps> = ({ size, className, src }) => {
+export const Avatar: FC<AvatarProps> = ({
+  size,
+  className,
+  src,
+  atToolbar,
+}) => {
+  if (atToolbar) {
+    return (
+      <span className="rounded-full px-[2px] py-[2px] inline-block bg-gray-500">
+        <img
+          className={twMerge(
+            "rounded-full outline outline-white outline-1 ",
+            sizeMap[size!],
+            className
+          )}
+          src={src}
+          alt="Rounded avatar"
+        ></img>
+      </span>
+    );
+  }
   return (
     <img
       className={twMerge("rounded-full", sizeMap[size!], className)}

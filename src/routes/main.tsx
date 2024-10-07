@@ -92,7 +92,7 @@ export const Route = createFileRoute("/main")({
         <StoryList listUser={listUser} />
         <PostList items={postList} />
       </div>
-      <Toolbar avatar={author.avatar} />
+      <Toolbar avatar={author.avatar} atHomeScreen />
     </>
   ),
 });

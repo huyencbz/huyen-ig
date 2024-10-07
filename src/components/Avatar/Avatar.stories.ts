@@ -14,3 +14,10 @@ export const Sample: Story = {
     src: "https://randomuser.me/api/portraits/men/35.jpg",
   },
 };
+export const Toolbar: Story = {
+  args: {
+    size: "x_small",
+    atToolbar: true,
+    src: "https://randomuser.me/api/portraits/men/35.jpg",
+  },
+};
