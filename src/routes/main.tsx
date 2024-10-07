@@ -49,6 +49,14 @@ const listUser = [
     },
     isRead: true,
   },
+  {
+    userInfo: {
+      name: "love_huyen",
+      isOfficial: true,
+      avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    },
+    isRead: true,
+  },
 ];
 
 const postList = [

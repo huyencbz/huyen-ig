@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { Avatar, AvatarProps } from "../Avatar/Avatar";
+import Plus from "../../assets/plus.svg?react";
 
 interface StoryAvatarProps extends AvatarProps {
   isRead?: boolean;
@@ -26,7 +27,7 @@ export const StoryAvatar: FC<StoryAvatarProps> = ({
           "rounded-full px-1 py-1 inline-block",
           isRead && !isAdd && styles.read,
           !isRead && !isAdd && styles.unread,
-          isAdd && styles.add,
+          isAdd && styles.add
         )}
       >
         <Avatar
@@ -34,14 +35,14 @@ export const StoryAvatar: FC<StoryAvatarProps> = ({
           isOutline
           className={twMerge(
             "outline outline-white",
-            isRead ? "outline-3" : "outline-2",
+            isRead ? "outline-3" : "outline-2"
           )}
           {...props}
         />
       </span>
       {isAdd && (
         <span className="flex items-center justify-center absolute bg-blue-500 rounded-full bottom-[10px] right-[5px] w-4 h-4 leading-none outline outline-white text-white font-bold">
-          +
+          <Plus />
         </span>
       )}
       {isLive && (
