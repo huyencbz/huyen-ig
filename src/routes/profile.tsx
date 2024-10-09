@@ -76,7 +76,7 @@ export const Route = createFileRoute("/profile")({
 });
 function Profile() {
   return (
-    <div className="flex flex-col text-sm gap-4">
+    <div className="flex flex-col text-sm">
       <div className="flex items-center px-4 pt-4">
         <div className="grow">
           <StoryAvatar
@@ -99,7 +99,7 @@ function Profile() {
           </div>
         </div>
       </div>
-      <div className="flex gap-1 px-4">
+      <div className="flex gap-1 px-4 mt-6">
         <button className="bg-gray-200 font-medium px-6 py-1 rounded-lg grow">
           Edit profile
         </button>
@@ -110,7 +110,7 @@ function Profile() {
           <AddUser className="w-4 h-4" />
         </button>
       </div>
-      <div>
+      <div className="mt-6">
         <div className="flex justify-between px-4 pb-2">
           <div>Discover people</div>
           <a href=""> See all</a>
@@ -137,10 +137,16 @@ function Profile() {
           </Swiper>
         </div>
       </div>
-      <div className="flex justify-between px-12 py-2 border-b">
-        <Grid />
-        <Tags />
-        <Tags />
+      <div className="flex mt-4 mb-[1px]">
+        <span className="flex border-b border-black py-2 justify-center grow">
+          <Grid />
+        </span>
+        <span className="flex justify-center border-b border-gray-400 py-2 opacity-40  grow">
+          <Tags />
+        </span>
+        <span className="flex justify-center border-b border-gray-400 py-2 opacity-40 grow">
+          <Tags />
+        </span>
       </div>
       <Photos sources={sources}></Photos>
       <Toolbar
