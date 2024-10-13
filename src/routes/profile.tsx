@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 import AddUser from "../assets/add_user.svg?react";
+import VideoPlay from "../assets/video_play.svg?react";
 import Grid from "../assets/grid.svg?react";
 import Tags from "../assets/tags.svg?react";
 import { UserDiscover } from "../components/UserDiscover/UserDiscover";
@@ -8,6 +9,7 @@ import { Toolbar } from "../components/Toolbar/Toolbar";
 import { Photos } from "../components/Photos/Photos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
+import { Tabs } from "../components/Tabs/Tabs";
 
 const sources = [
   {
@@ -137,17 +139,7 @@ function Profile() {
           </Swiper>
         </div>
       </div>
-      <div className="flex mt-4 mb-[1px]">
-        <span className="flex border-b border-black py-2 justify-center grow">
-          <Grid />
-        </span>
-        <span className="flex justify-center border-b border-gray-400 py-2 opacity-40  grow">
-          <Tags />
-        </span>
-        <span className="flex justify-center border-b border-gray-400 py-2 opacity-40 grow">
-          <Tags />
-        </span>
-      </div>
+      <Tabs activeTab={0} tabs={[<Grid />, <VideoPlay />, <Tags />]} />
       <Photos sources={sources}></Photos>
       <Toolbar
         avatar="https://randomuser.me/api/portraits/men/88.jpg"
