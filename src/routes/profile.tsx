@@ -10,6 +10,7 @@ import { Photos } from "../components/Photos/Photos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import { Tabs } from "../components/Tabs/Tabs";
+import { Button } from "../components/Button/Button";
 
 const sources = [
   {
@@ -87,7 +88,7 @@ function Profile() {
           />
         </div>
         <div className="flex gap-4 px-6">
-          <div className="flex flex-col  items-center">
+          <div className="flex flex-col items-center">
             <div className="text-base">10</div>
             <div>posts</div>
           </div>
@@ -102,15 +103,15 @@ function Profile() {
         </div>
       </div>
       <div className="flex gap-1 px-4 mt-6">
-        <button className="bg-gray-200 font-medium px-6 py-1 rounded-lg grow">
+        <Button type="secondary" isBlock>
           Edit profile
-        </button>
-        <button className="bg-gray-200 font-medium px-6 py-1 rounded-lg grow">
+        </Button>
+        <Button type="secondary" isBlock>
           Share profile
-        </button>
-        <button className="bg-gray-200 font-medium px-2 py-1 rounded-lg">
+        </Button>
+        <Button type="secondary">
           <AddUser className="w-4 h-4" />
-        </button>
+        </Button>
       </div>
       <div className="mt-6">
         <div className="flex justify-between px-4 pb-2">

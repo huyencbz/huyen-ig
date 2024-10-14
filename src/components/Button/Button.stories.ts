@@ -9,9 +9,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Normal: Story = {
+export const Submit: Story = {
   args: {
     children: "Log in",
+    type: "submit",
   },
 };
 
@@ -19,5 +20,20 @@ export const Block: Story = {
   args: {
     children: "Log in",
     isBlock: true,
+    type: "submit",
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    children: "Follow",
+    isBlock: true,
+    type: "primary",
+  },
+};
+export const Secondary: Story = {
+  args: {
+    children: "Follow",
+    type: "secondary",
   },
 };

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Avatar } from "../Avatar/Avatar";
 import Close from "../../assets/close.svg?react";
+import { Button } from "../Button/Button";
 
 interface UserDiscoverProps {}
 export const UserDiscover: FC<UserDiscoverProps> = () => {
@@ -19,9 +20,9 @@ export const UserDiscover: FC<UserDiscoverProps> = () => {
           Followed by anniee_ei + 1 more
         </span>
       </div>
-      <button className="bg-blue-400 font-medium px-8 text-white py-1 rounded-lg grow">
+      <Button type="primary" isBlock>
         Follow
-      </button>
+      </Button>
     </div>
   );
 };
