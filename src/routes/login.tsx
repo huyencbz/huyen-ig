@@ -26,7 +26,9 @@ function Login() {
               Forgot password?
             </a>
           </div>
-          <Button isBlock>Login</Button>
+          <Button isBlock color="primary">
+            Login
+          </Button>
         </form>
         <div className="flex gap-2 items-center">
           <img src={facebook} alt="facebook" />

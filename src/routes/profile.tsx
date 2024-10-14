@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 import AddUser from "../assets/add_user.svg?react";
 import VideoPlay from "../assets/video_play.svg?react";
 import Grid from "../assets/grid.svg?react";
@@ -11,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import { Tabs } from "../components/Tabs/Tabs";
 import { Button } from "../components/Button/Button";
+import { ProfileAvatar } from "../components/ProfileAvatar/ProfileAvatar";
 
 const sources = [
   {
@@ -80,12 +80,9 @@ export const Route = createFileRoute("/profile")({
 function Profile() {
   return (
     <div className="flex flex-col text-sm">
-      <div className="flex items-center px-4 pt-4">
+      <div className="flex items-center px-4 pt-10">
         <div className="grow">
-          <StoryAvatar
-            isAdd
-            src={"https://randomuser.me/api/portraits/men/35.jpg"}
-          />
+          <ProfileAvatar />
         </div>
         <div className="flex gap-4 px-6">
           <div className="flex flex-col items-center">
@@ -103,13 +100,9 @@ function Profile() {
         </div>
       </div>
       <div className="flex gap-1 px-4 mt-6">
-        <Button type="secondary" isBlock>
-          Edit profile
-        </Button>
-        <Button type="secondary" isBlock>
-          Share profile
-        </Button>
-        <Button type="secondary">
+        <Button isBlock>Edit profile</Button>
+        <Button isBlock>Share profile</Button>
+        <Button>
           <AddUser className="w-4 h-4" />
         </Button>
       </div>

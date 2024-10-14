@@ -20,7 +20,7 @@ export const UserDiscover: FC<UserDiscoverProps> = () => {
           Followed by anniee_ei + 1 more
         </span>
       </div>
-      <Button type="primary" isBlock>
+      <Button color="primary" isBlock>
         Follow
       </Button>
     </div>

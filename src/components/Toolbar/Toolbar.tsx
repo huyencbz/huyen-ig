@@ -43,7 +43,13 @@ export const Toolbar: FC<ToolbarProps> = ({
         )}
 
         <AddPost />
-        {atLikeScreen ? <LikeActive /> : <Like />}
+        {atLikeScreen ? (
+          <LikeActive />
+        ) : (
+          <Link to="/reels">
+            <Like className="text-black" />
+          </Link>
+        )}
         {atUserScreen ? (
           <Avatar size="x_small" src={avatar} atToolbar />
         ) : (

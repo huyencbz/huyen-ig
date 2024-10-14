@@ -9,10 +9,11 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Submit: Story = {
+export const Primary: Story = {
   args: {
     children: "Log in",
-    type: "submit",
+    color: "primary",
+    size: "small",
   },
 };
 
@@ -20,20 +21,43 @@ export const Block: Story = {
   args: {
     children: "Log in",
     isBlock: true,
-    type: "submit",
+    color: "primary",
+    size: "large",
   },
 };
 
-export const Primary: Story = {
+export const Neutral: Story = {
   args: {
     children: "Follow",
-    isBlock: true,
-    type: "primary",
+    color: "neutral",
+    size: "medium",
   },
 };
-export const Secondary: Story = {
+export const Transparent: Story = {
   args: {
     children: "Follow",
-    type: "secondary",
+    color: "transparent",
+    size: "small",
+  },
+};
+export const Small: Story = {
+  args: {
+    children: "Log in",
+    color: "primary",
+    size: "small",
+  },
+};
+export const Medium: Story = {
+  args: {
+    children: "Log in",
+    color: "primary",
+    size: "medium",
+  },
+};
+export const Large: Story = {
+  args: {
+    children: "Log in",
+    color: "primary",
+    size: "large",
   },
 };

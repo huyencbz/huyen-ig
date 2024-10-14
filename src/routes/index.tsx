@@ -28,6 +28,7 @@ function Index() {
             onClick={() => {
               navigate({ to: "/main" });
             }}
+            color="primary"
           >
             Login
           </Button>

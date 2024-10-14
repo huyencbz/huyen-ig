@@ -4,20 +4,35 @@ export interface ButtonProps {
   children?: ReactNode;
   isBlock?: boolean;
   onClick?: () => void;
-  type?: "submit" | "primary" | "secondary";
+  color?: "primary" | "neutral" | "transparent";
+  size?: "small" | "medium" | "large";
+  border?: boolean;
+  bold?: boolean;
 }
-export const Button = ({ children, isBlock, onClick, type }: ButtonProps) => {
+export const Button = ({
+  children,
+  isBlock,
+  onClick,
+  color = "neutral",
+  size = "medium",
+  border,
+  bold,
+}: ButtonProps) => {
   return (
     <button
       type="button"
       onClick={onClick}
       className={twMerge(
-        type == "submit" &&
-          "bg-blue-500 hover:bg-blue-700 text-white text-sm py-2 px-2 border-blue-700 rounded",
-        type == "primary" &&
-          "bg-blue-400 font-medium px-2 text-white py-1 rounded-lg",
-        type == "secondary" && "bg-gray-200 font-medium px-2 py-1 rounded-lg",
-        isBlock && "w-full"
+        color == "primary" && "bg-blue-500 hover:bg-blue-700 text-white",
+        color == "neutral" && "bg-gray-200 hover:bg-gray-300 ",
+        color == "transparent" && "bg-transparent",
+        size == "small" && "py-1 px-1 text-xs",
+        size == "medium" && "py-1 px-2 text-sm",
+        size == "large" && "py-1 px-3 text-base",
+        isBlock && "w-full",
+        border && "border border-gray-300",
+        bold && "font-bold",
+        "rounded-md"
       )}
     >
       {children}
