@@ -38,33 +38,42 @@ function Reels() {
         </div>
         <div className="text-center">...</div>
       </div>
-      <div className="absolute bottom-[160px] left-4 z-30 text-sm text-white">
-        <div className="flex gap-1 items-center">
+      <div className="flex flex-col gap-2 absolute bottom-20 left-4 right-16 z-30 text-sm text-white">
+        <div className="flex gap-2 items-center">
           <StoryAvatar
             size="x_small"
             src="https://randomuser.me/api/portraits/men/35.jpg"
           ></StoryAvatar>
           <span className="font-bold">katja.furr</span>
-          <Button color="transparent" size="small" border bold>
+          <Button className="ml-2" color="transparent" size="small" border bold>
             Follow
           </Button>
         </div>
         <div>always sharing snacks & clothes ...</div>
         <div className="">
           <Swiper
-            slidesPerView={2}
-            spaceBetween={-120}
+            slidesPerView={"auto"}
+            spaceBetween={8}
             freeMode={true}
             modules={[FreeMode]}
           >
-            <SwiperSlide className="flex justify-center items-center">
-              <div className="bg-red-400 rounded-full">music</div>
+            <SwiperSlide
+              style={{ width: "fit-content" }}
+              className="flex justify-center items-center"
+            >
+              <div className="bg-blue-400 rounded-full">music</div>
             </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide
+              style={{ width: "fit-content" }}
+              className="flex justify-center items-center "
+            >
               <div className="bg-red-400 rounded-full">location</div>
             </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center">
-              <div className="bg-red-400 rounded-full">user</div>
+            <SwiperSlide
+              style={{ width: "fit-content" }}
+              className="flex justify-center items-center "
+            >
+              <div className="bg-pink-400 rounded-full">user</div>
             </SwiperSlide>
           </Swiper>
         </div>
