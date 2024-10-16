@@ -8,6 +8,7 @@ export interface ButtonProps {
   size?: "small" | "medium" | "large";
   border?: boolean;
   bold?: boolean;
+  className?: string;
 }
 export const Button = ({
   children,
@@ -17,12 +18,14 @@ export const Button = ({
   size = "medium",
   border,
   bold,
+  className,
 }: ButtonProps) => {
   return (
     <button
       type="button"
       onClick={onClick}
       className={twMerge(
+        className,
         color == "primary" && "bg-blue-500 hover:bg-blue-700 text-white",
         color == "neutral" && "bg-gray-200 hover:bg-gray-300 ",
         color == "transparent" && "bg-transparent",
