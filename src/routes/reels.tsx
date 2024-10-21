@@ -5,10 +5,14 @@ import Like from "../assets/like.svg?react";
 import Share from "../assets/share.svg?react";
 import Comment from "../assets/comment.svg?react";
 import DownChevron from "../assets/down_chevron.svg?react";
+import Location from "../assets/location.svg?react";
+import User from "../assets/user.svg?react";
+import MusicNote from "../assets/music_note.svg?react";
 import { Button } from "../components/Button/Button";
 import { StoryAvatar } from "../components/StoryAvatar/StoryAvatar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
+import { Chip } from "../components/Chip/Chip";
 
 export const Route = createFileRoute("/reels")({
   component: Reels,
@@ -61,19 +65,21 @@ function Reels() {
               style={{ width: "fit-content" }}
               className="flex justify-center items-center"
             >
-              <div className="bg-blue-400 rounded-full">music</div>
+              <Chip icon={<MusicNote className="w-4 h-4" />}>
+                Tommy Richman
+              </Chip>
             </SwiperSlide>
             <SwiperSlide
               style={{ width: "fit-content" }}
               className="flex justify-center items-center "
             >
-              <div className="bg-red-400 rounded-full">location</div>
+              <Chip icon={<Location className="w-4 h-4" />}>hiep binh</Chip>
             </SwiperSlide>
             <SwiperSlide
               style={{ width: "fit-content" }}
               className="flex justify-center items-center "
             >
-              <div className="bg-pink-400 rounded-full">user</div>
+              <Chip icon={<User className="w-4 h-4" />}>huyen_cute</Chip>
             </SwiperSlide>
           </Swiper>
         </div>
@@ -85,7 +91,7 @@ function Reels() {
         className="absolute z-10 w-full h-full object-cover"
       >
         <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+          src="https://videos.pexels.com/video-files/2795405/2795405-uhd_1440_2560_25fps.mp4"
           type="video/mp4"
         />
       </video>
