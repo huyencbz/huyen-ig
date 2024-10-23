@@ -14,7 +14,7 @@ function Login() {
   return (
     <>
       <div className="flex relative h-screen justify-center flex-col items-center text-sm">
-        <button className="w-2/3 absolute top-20">
+        <button className="w-2/3 absolute top-10">
           <Back />
         </button>
         <Logo className="mb-12" />

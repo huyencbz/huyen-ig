@@ -7,7 +7,7 @@ export interface StoryItemProps {
 }
 export const StoryItem: FC<StoryItemProps> = ({ storyUser }) => {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center mx-1">
       <StoryAvatar
         isLive={storyUser.isLive}
         isAdd={storyUser.isAdd}

@@ -25,7 +25,7 @@ export const Toolbar: FC<ToolbarProps> = ({
 }) => {
   return (
     <div className="flex justify-center fixed bottom-0 left-0 right-0 z-50 h-14">
-      <div className="flex items-center justify-between grow max-w-[340px] bg-[#fafafa] px-6 py-4 border-t">
+      <div className="flex items-center justify-between grow bg-[#fafafa] px-6 py-4 border-t">
         {atHomeScreen ? (
           <HomeActive />
         ) : (

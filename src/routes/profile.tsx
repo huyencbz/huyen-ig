@@ -113,21 +113,33 @@ function Profile() {
         </div>
         <div className="pl-4">
           <Swiper
-            slidesPerView={2}
-            spaceBetween={-70}
+            className="w-screen"
+            slidesPerView={"auto"}
             freeMode={true}
             modules={[FreeMode]}
           >
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
               <UserDiscover />
             </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
               <UserDiscover />
             </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
               <UserDiscover />
             </SwiperSlide>
-            <SwiperSlide className="flex justify-center items-center">
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
               <UserDiscover />
             </SwiperSlide>
           </Swiper>

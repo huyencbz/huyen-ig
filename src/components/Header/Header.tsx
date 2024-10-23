@@ -6,7 +6,7 @@ import Feed from "../../assets/feed.svg?react";
 export const Header = () => {
   return (
     <div className="flex justify-center fixed top-0 left-0 right-0 z-50 h-12">
-      <div className="flex items-center px-4 grow max-w-[340px] bg-[#fafafa] border-b">
+      <div className="flex items-center px-4 grow bg-[#fafafa] border-b">
         <Camera />
         <Logo className="h-8 grow" />
         <div className="flex items-center gap-4 ">

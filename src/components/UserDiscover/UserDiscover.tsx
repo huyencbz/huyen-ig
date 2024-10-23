@@ -6,7 +6,7 @@ import { Button } from "../Button/Button";
 interface UserDiscoverProps {}
 export const UserDiscover: FC<UserDiscoverProps> = () => {
   return (
-    <div className="flex flex-col gap-[10px] py-[10px] px-[10px] w-fit items-center text-xs border border-t rounded relative">
+    <div className="flex flex-col gap-[10px] py-[10px] px-[10px] w-fit items-center text-xs border border-t rounded relative mx-1">
       <button className="absolute top-1 right-1">
         <Close className="w-4 h-4" />
       </button>

@@ -12,7 +12,7 @@ interface SliderProps {
 export const Slider: FC<SliderProps> = ({ source }) => {
   return (
     <Swiper
-      className="w-full h-full"
+      className="w-screen"
       pagination={{
         dynamicBullets: true,
       }}
