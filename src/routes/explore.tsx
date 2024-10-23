@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Search } from "../components/Search/Search";
 import { Photos } from "../components/Photos/Photos";
 import { Toolbar } from "../components/Toolbar/Toolbar";
+import { Layout } from "../components/Layout/Layout";
 
 const sources = [
   {
@@ -70,15 +71,18 @@ export const Route = createFileRoute("/explore")({
 });
 function Explore() {
   return (
-    <>
+    <Layout
+      footer={
+        <Toolbar
+          avatar="https://randomuser.me/api/portraits/men/88.jpg"
+          atSearchScreen
+        />
+      }
+    >
       <div className="mx-3 my-2">
         <Search />
       </div>
       <Photos sources={sources} />
-      <Toolbar
-        avatar="https://randomuser.me/api/portraits/men/88.jpg"
-        atSearchScreen
-      />
-    </>
+    </Layout>
   );
 }

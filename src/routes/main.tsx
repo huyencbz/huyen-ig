@@ -3,6 +3,7 @@ import { Toolbar } from "../components/Toolbar/Toolbar";
 import { Header } from "../components/Header/Header";
 import { StoryList } from "../components/StoryList/StoryList";
 import { PostList } from "../components/PostList/PostList";
+import { Layout } from "../components/Layout/Layout";
 const author = {
   name: "joshua_l",
   isOfficial: true,
@@ -93,14 +94,19 @@ const postList = [
 ];
 
 export const Route = createFileRoute("/main")({
-  component: () => (
-    <>
-      <Header />
-      <div className="flex flex-col gap-2 mb-16">
+  component: Main,
+});
+
+function Main() {
+  return (
+    <Layout
+      header={<Header />}
+      footer={<Toolbar avatar={author.avatar} atHomeScreen />}
+    >
+      <div className="flex flex-col gap-2">
         <StoryList listUser={listUser} />
         <PostList items={postList} />
       </div>
-      <Toolbar avatar={author.avatar} atHomeScreen />
-    </>
-  ),
-});
+    </Layout>
+  );
+}

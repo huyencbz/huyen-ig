@@ -12,23 +12,21 @@ interface StoryListProps {
 }
 export const StoryList: FC<StoryListProps> = ({ listUser }) => {
   return (
-    <div className="pt-14">
-      <Swiper
-        slidesPerView={"auto"}
-        freeMode={true}
-        modules={[FreeMode]}
-        className="w-screen"
-      >
-        {listUser.map((user, index) => (
-          <SwiperSlide
-            className="flex justify-center"
-            style={{ width: "fit-content" }}
-            key={index}
-          >
-            <StoryItem storyUser={user} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <Swiper
+      slidesPerView={"auto"}
+      freeMode={true}
+      modules={[FreeMode]}
+      className="w-screen"
+    >
+      {listUser.map((user, index) => (
+        <SwiperSlide
+          className="flex justify-center"
+          style={{ width: "fit-content" }}
+          key={index}
+        >
+          <StoryItem storyUser={user} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };

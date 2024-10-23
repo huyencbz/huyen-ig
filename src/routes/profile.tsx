@@ -11,6 +11,7 @@ import { FreeMode } from "swiper/modules";
 import { Tabs } from "../components/Tabs/Tabs";
 import { Button } from "../components/Button/Button";
 import { ProfileAvatar } from "../components/ProfileAvatar/ProfileAvatar";
+import { Layout } from "../components/Layout/Layout";
 
 const sources = [
   {
@@ -79,78 +80,83 @@ export const Route = createFileRoute("/profile")({
 });
 function Profile() {
   return (
-    <div className="flex flex-col text-sm">
-      <div className="flex items-center px-4 pt-10">
-        <div className="grow">
-          <ProfileAvatar />
-        </div>
-        <div className="flex gap-4 px-6">
-          <div className="flex flex-col items-center">
-            <div className="text-base">10</div>
-            <div>posts</div>
+    <Layout
+      footer={
+        <Toolbar
+          avatar="https://randomuser.me/api/portraits/men/88.jpg"
+          atUserScreen
+        />
+      }
+    >
+      <div className="flex flex-col text-sm">
+        <div className="flex items-center px-4 pt-10">
+          <div className="grow">
+            <ProfileAvatar />
           </div>
-          <div className="flex flex-col  items-center">
-            <div className="text-base">10</div>
-            <div>followers</div>
+          <div className="flex gap-4 px-6">
+            <div className="flex flex-col items-center">
+              <div className="text-base">10</div>
+              <div>posts</div>
+            </div>
+            <div className="flex flex-col  items-center">
+              <div className="text-base">10</div>
+              <div>followers</div>
+            </div>
+            <div className="flex flex-col  items-center">
+              <div className="text-base">10</div>
+              <div>following</div>
+            </div>
           </div>
-          <div className="flex flex-col  items-center">
-            <div className="text-base">10</div>
-            <div>following</div>
+        </div>
+        <div className="flex gap-1 px-4 mt-6">
+          <Button isBlock>Edit profile</Button>
+          <Button isBlock>Share profile</Button>
+          <Button>
+            <AddUser className="w-4 h-4" />
+          </Button>
+        </div>
+        <div className="mt-6">
+          <div className="flex justify-between px-4 pb-2">
+            <div>Discover people</div>
+            <a href=""> See all</a>
+          </div>
+          <div className="pl-4">
+            <Swiper
+              className="w-screen"
+              slidesPerView={"auto"}
+              freeMode={true}
+              modules={[FreeMode]}
+            >
+              <SwiperSlide
+                className="flex justify-center items-center"
+                style={{ width: "fit-content" }}
+              >
+                <UserDiscover />
+              </SwiperSlide>
+              <SwiperSlide
+                className="flex justify-center items-center"
+                style={{ width: "fit-content" }}
+              >
+                <UserDiscover />
+              </SwiperSlide>
+              <SwiperSlide
+                className="flex justify-center items-center"
+                style={{ width: "fit-content" }}
+              >
+                <UserDiscover />
+              </SwiperSlide>
+              <SwiperSlide
+                className="flex justify-center items-center"
+                style={{ width: "fit-content" }}
+              >
+                <UserDiscover />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
+        <Tabs activeTab={0} tabs={[<Grid />, <VideoPlay />, <Tags />]} />
+        <Photos sources={sources}></Photos>
       </div>
-      <div className="flex gap-1 px-4 mt-6">
-        <Button isBlock>Edit profile</Button>
-        <Button isBlock>Share profile</Button>
-        <Button>
-          <AddUser className="w-4 h-4" />
-        </Button>
-      </div>
-      <div className="mt-6">
-        <div className="flex justify-between px-4 pb-2">
-          <div>Discover people</div>
-          <a href=""> See all</a>
-        </div>
-        <div className="pl-4">
-          <Swiper
-            className="w-screen"
-            slidesPerView={"auto"}
-            freeMode={true}
-            modules={[FreeMode]}
-          >
-            <SwiperSlide
-              className="flex justify-center items-center"
-              style={{ width: "fit-content" }}
-            >
-              <UserDiscover />
-            </SwiperSlide>
-            <SwiperSlide
-              className="flex justify-center items-center"
-              style={{ width: "fit-content" }}
-            >
-              <UserDiscover />
-            </SwiperSlide>
-            <SwiperSlide
-              className="flex justify-center items-center"
-              style={{ width: "fit-content" }}
-            >
-              <UserDiscover />
-            </SwiperSlide>
-            <SwiperSlide
-              className="flex justify-center items-center"
-              style={{ width: "fit-content" }}
-            >
-              <UserDiscover />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </div>
-      <Tabs activeTab={0} tabs={[<Grid />, <VideoPlay />, <Tags />]} />
-      <Photos sources={sources}></Photos>
-      <Toolbar
-        avatar="https://randomuser.me/api/portraits/men/88.jpg"
-        atUserScreen
-      />
-    </div>
+    </Layout>
   );
 }
