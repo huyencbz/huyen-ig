@@ -22,7 +22,7 @@ export const Photos: FC<PhotosProps> = ({ sources }) => {
             <img
               className={twMerge(
                 "object-cover",
-                isLarge(index) ? "h-full" : "aspect-square"
+                isLarge(index) ? "h-full w-full" : "aspect-square"
               )}
               src={src.source}
               alt="src"
