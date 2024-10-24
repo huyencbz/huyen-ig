@@ -120,39 +120,37 @@ function Profile() {
             <div>Discover people</div>
             <a href=""> See all</a>
           </div>
-          <div className="pl-4">
-            <Swiper
-              className="w-screen"
-              slidesPerView={"auto"}
-              freeMode={true}
-              modules={[FreeMode]}
+          <Swiper
+            className="w-screen sm:max-w-[480px]"
+            slidesPerView={"auto"}
+            freeMode={true}
+            modules={[FreeMode]}
+          >
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
             >
-              <SwiperSlide
-                className="flex justify-center items-center"
-                style={{ width: "fit-content" }}
-              >
-                <UserDiscover />
-              </SwiperSlide>
-              <SwiperSlide
-                className="flex justify-center items-center"
-                style={{ width: "fit-content" }}
-              >
-                <UserDiscover />
-              </SwiperSlide>
-              <SwiperSlide
-                className="flex justify-center items-center"
-                style={{ width: "fit-content" }}
-              >
-                <UserDiscover />
-              </SwiperSlide>
-              <SwiperSlide
-                className="flex justify-center items-center"
-                style={{ width: "fit-content" }}
-              >
-                <UserDiscover />
-              </SwiperSlide>
-            </Swiper>
-          </div>
+              <UserDiscover />
+            </SwiperSlide>
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
+              <UserDiscover />
+            </SwiperSlide>
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
+              <UserDiscover />
+            </SwiperSlide>
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
+              <UserDiscover />
+            </SwiperSlide>
+          </Swiper>
         </div>
         <Tabs activeTab={0} tabs={[<Grid />, <VideoPlay />, <Tags />]} />
         <Photos sources={sources}></Photos>

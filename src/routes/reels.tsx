@@ -28,7 +28,7 @@ function Reels() {
         />
       }
     >
-      <div className="flex justify-center fixed top-0 left-0 right-0 bottom-[56px] ">
+      <div className="flex justify-center fixed top-0 left-0 right-0 bottom-[56px] sm:max-w-[480px]">
         <div className="flex absolute items-center gap-1 px-4 py-4 z-30 text-xl text-white w-full">
           <div className="font-bold">Reels</div>
           <div className="flex-grow">
