@@ -4,7 +4,7 @@ import { Photos } from "../components/Photos/Photos";
 import { Toolbar } from "../components/Toolbar/Toolbar";
 import { Layout } from "../components/Layout/Layout";
 
-const sources = [
+export const sources = [
   {
     source: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
     isGallery: true,
@@ -82,7 +82,7 @@ function Explore() {
       <div className="mx-3 my-2">
         <Search />
       </div>
-      <Photos sources={sources} />
+      <Photos order sources={sources} />
     </Layout>
   );
 }

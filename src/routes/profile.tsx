@@ -153,7 +153,7 @@ function Profile() {
           </Swiper>
         </div>
         <Tabs activeTab={0} tabs={[<Grid />, <VideoPlay />, <Tags />]} />
-        <Photos sources={sources}></Photos>
+        <Photos order sources={sources}></Photos>
       </div>
     </Layout>
   );
