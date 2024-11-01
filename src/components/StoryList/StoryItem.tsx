@@ -7,7 +7,12 @@ export interface StoryItemProps {
 }
 export const StoryItem: FC<StoryItemProps> = ({ storyUser }) => {
   return (
-    <div className="flex flex-col justify-center mx-1">
+    <a
+      href="/"
+      className="flex flex-col justify-center mx-1 text-black"
+      aria-label={`This is ${storyUser.userInfo.name}'s story`}
+      title={`This is ${storyUser.userInfo.name}'s story`}
+    >
       <StoryAvatar
         isLive={storyUser.isLive}
         isAdd={storyUser.isAdd}
@@ -15,6 +20,6 @@ export const StoryItem: FC<StoryItemProps> = ({ storyUser }) => {
         src={storyUser.userInfo.avatar}
       />
       <div className="text-xs text-center">{storyUser.userInfo.name}</div>
-    </div>
+    </a>
   );
 };

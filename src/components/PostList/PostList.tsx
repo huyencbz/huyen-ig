@@ -6,10 +6,10 @@ interface PostListProps {
 }
 export const PostList: FC<PostListProps> = ({ items }) => {
   return (
-    <>
+    <ul>
       {items.map((item, index) => (
         <Post {...item} key={index} />
       ))}
-    </>
+    </ul>
   );
 };

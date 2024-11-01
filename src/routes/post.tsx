@@ -5,7 +5,7 @@ import Gallery from "../assets/gallery.svg?react";
 import DownChevron from "../assets/down_chevron.svg?react";
 import UpChevron from "../assets/up_chevron.svg?react";
 import Picture from "../assets/picture.svg?react";
-import { Photos } from "../components/Photos/Photos";
+import { Photos } from "@ig/components";
 
 export const Route = createFileRoute("/post")({
   component: Post,

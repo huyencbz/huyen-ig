@@ -3,15 +3,17 @@ import AddUser from "../assets/add_user.svg?react";
 import VideoPlay from "../assets/video_play.svg?react";
 import Grid from "../assets/grid.svg?react";
 import Tags from "../assets/tags.svg?react";
-import { UserDiscover } from "../components/UserDiscover/UserDiscover";
-import { Toolbar } from "../components/Toolbar/Toolbar";
-import { Photos } from "../components/Photos/Photos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
-import { Tabs } from "../components/Tabs/Tabs";
-import { Button } from "../components/Button/Button";
-import { ProfileAvatar } from "../components/ProfileAvatar/ProfileAvatar";
-import { Layout } from "../components/Layout/Layout";
+import {
+  Layout,
+  ProfileAvatar,
+  Button,
+  Tabs,
+  Photos,
+  Toolbar,
+  UserDiscover,
+} from "@ig/components";
 
 const sources = [
   {
@@ -126,6 +128,12 @@ function Profile() {
             freeMode={true}
             modules={[FreeMode]}
           >
+            <SwiperSlide
+              className="flex justify-center items-center"
+              style={{ width: "fit-content" }}
+            >
+              <UserDiscover />
+            </SwiperSlide>
             <SwiperSlide
               className="flex justify-center items-center"
               style={{ width: "fit-content" }}

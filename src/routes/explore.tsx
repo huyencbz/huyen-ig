@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Search } from "../components/Search/Search";
-import { Photos } from "../components/Photos/Photos";
-import { Toolbar } from "../components/Toolbar/Toolbar";
-import { Layout } from "../components/Layout/Layout";
+import { Layout, Toolbar, Photos, Search } from "@ig/components";
 
 export const sources = [
   {

@@ -19,7 +19,7 @@ export interface PostProps {
 }
 export const Post: FC<PostProps> = ({ author, location, content, like }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <li className="flex flex-col gap-2">
       <Divider />
       <Header author={author} location={location} />
       {content.source.length > 1 ? (
@@ -34,6 +34,6 @@ export const Post: FC<PostProps> = ({ author, location, content, like }) => {
         author={author}
         caption={content.caption}
       />
-    </div>
+    </li>
   );
 };

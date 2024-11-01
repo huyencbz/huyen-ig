@@ -16,13 +16,15 @@ export const StoryList: FC<StoryListProps> = ({ listUser }) => {
       slidesPerView={"auto"}
       freeMode={true}
       modules={[FreeMode]}
-      className="w-screen"
+      className="w-screen sm:max-w-[480px]"
+      wrapperTag={"ul"}
     >
       {listUser.map((user, index) => (
         <SwiperSlide
           className="flex justify-center"
           style={{ width: "fit-content" }}
           key={index}
+          tag={"li"}
         >
           <StoryItem storyUser={user} />
         </SwiperSlide>

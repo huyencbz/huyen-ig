@@ -2,9 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import Logo from "../assets/logo.svg?react";
 import Back from "../assets/back.svg?react";
 import facebook from "../assets/facebook.svg";
-import { Button } from "../components/Button/Button";
-import { Divider } from "../components/Divider/Divider";
-import { TextInput } from "../components/TextInput/TextInput";
+import { TextInput, Divider, Button } from "@ig/components";
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -17,7 +15,7 @@ function Login() {
         <button className="w-2/3 absolute top-10">
           <Back />
         </button>
-        <Logo className="mb-12" />
+        <Logo className="mb-12" title="Instagram" />
         <form className="flex flex-col mb-8 gap-2 items-center w-2/3">
           <TextInput isBlock placeholder="Username" type="text" />
           <TextInput isBlock placeholder="Password" type="password" />

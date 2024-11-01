@@ -1,9 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Toolbar } from "../components/Toolbar/Toolbar";
-import { Header } from "../components/Header/Header";
-import { StoryList } from "../components/StoryList/StoryList";
-import { PostList } from "../components/PostList/PostList";
-import { Layout } from "../components/Layout/Layout";
+import { Layout, PostList, StoryList, Header, Toolbar } from "@ig/components";
 const author = {
   name: "joshua_l",
   isOfficial: true,
@@ -25,6 +21,22 @@ const listUser = [
       avatar: "https://randomuser.me/api/portraits/women/33.jpg",
     },
     isLive: true,
+  },
+  {
+    userInfo: {
+      name: "love_huyen",
+      isOfficial: true,
+      avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    },
+    isRead: true,
+  },
+  {
+    userInfo: {
+      name: "love_huyen",
+      isOfficial: true,
+      avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    },
+    isRead: true,
   },
   {
     userInfo: {

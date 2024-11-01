@@ -31,7 +31,7 @@ export const Avatar: FC<AvatarProps> = ({
             className
           )}
           src={src}
-          alt="Rounded avatar"
+          alt="Logged in user avatar"
         ></img>
       </span>
     );
@@ -40,7 +40,7 @@ export const Avatar: FC<AvatarProps> = ({
     <img
       className={twMerge("rounded-full", sizeMap[size!], className)}
       src={src}
-      alt="Rounded avatar"
+      alt=""
     ></img>
   );
 };

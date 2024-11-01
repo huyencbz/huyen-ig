@@ -1,8 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import Logo from "../assets/logo.svg?react";
-import { Avatar } from "../components/Avatar/Avatar";
-import { Button } from "../components/Button/Button";
-import { Divider } from "../components/Divider/Divider";
+import { Avatar, Button, Divider } from "@ig/components";
 
 export const Route = createFileRoute("/")({
   component: Index,
