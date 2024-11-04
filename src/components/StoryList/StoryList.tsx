@@ -25,6 +25,7 @@ export const StoryList: FC<StoryListProps> = ({ listUser }) => {
           style={{ width: "fit-content" }}
           key={index}
           tag={"li"}
+          c
         >
           <StoryItem storyUser={user} />
         </SwiperSlide>

@@ -18,9 +18,14 @@ export const Slider: FC<SliderProps> = ({ source }) => {
       }}
       navigation
       modules={[Pagination, Navigation]}
+      wrapperTag={"ul"}
     >
       {source.map((item, index) => (
-        <SwiperSlide className="flex justify-center items-center" key={index}>
+        <SwiperSlide
+          className="flex justify-center items-center"
+          key={index}
+          tag={"li"}
+        >
           <img
             className="block w-full h-full object-cover"
             src={item}

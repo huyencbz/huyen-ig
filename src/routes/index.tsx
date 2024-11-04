@@ -13,7 +13,8 @@ function Index() {
     <>
       <div className="flex items-center flex-col h-screen justify-center">
         <div className="flex flex-col items-center justify-center w-2/3">
-          <Logo className="mb-12" title="Instagram" />
+          <div className="sr-only">Instagram logo</div>
+          <Logo className="mb-12" aria-hidden />
           <div className=" flex flex-col gap-2 mb-2 items-center">
             <Avatar
               size="large"
