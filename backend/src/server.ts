@@ -1,17 +1,20 @@
-import express, { json } from "express";
+import express, { json, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
+import userRouters from "./accounts/routes";
 
 const app = express();
 const prisma = new PrismaClient();
 
 app.use(json());
 
-app.get("/accounts", async (req, res) => {
-  const users = await prisma.accounts.findMany();
-  res.json(users);
-});
-app.post("/register", async (req, res) => {
+app.use("/accounts", userRouters);
+
+// app.get("/accounts", async (req: Request, res: Response) => {
+//   const users = await prisma.accounts.findMany();
+//   res.json(users);
+// });
+app.post("/register", async (req: Request, res: Response) => {
   const { email, username, password, birthday } = req.body;
 
   try {
@@ -21,7 +24,7 @@ app.post("/register", async (req, res) => {
         email,
         username,
         password: hashedPassword,
-        birthday: birthday ? new Date(birthday) : null,
+        birthday: birthday ? new Date(birthday) : "",
       },
     });
     res.status(201).json(newUser);
