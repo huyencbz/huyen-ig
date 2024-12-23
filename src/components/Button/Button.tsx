@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 export interface ButtonProps {
   children?: ReactNode;
   isBlock?: boolean;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   color?: "primary" | "neutral" | "transparent";
   size?: "small" | "medium" | "large";
   border?: boolean;

@@ -1,14 +1,41 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import Logo from "../assets/logo.svg?react";
 import Back from "../assets/back.svg?react";
 import facebook from "../assets/facebook.svg";
 import { TextInput, Divider, Button } from "@ig/components";
+import axios from "axios";
+import { useState } from "react";
 
 export const Route = createFileRoute("/login")({
   component: Login,
 });
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `http://localhost:3002/accounts/login`,
+        {
+          username,
+          password,
+        }
+      );
+      if (response.data.token) {
+        navigate({ to: "/main" });
+        localStorage.setItem("token", response.data.token);
+      }
+    } catch (error) {
+      setMessage("Login failed!");
+    }
+  };
+
   return (
     <>
       <div className="flex relative h-screen justify-center flex-col items-center text-sm">
@@ -17,16 +44,29 @@ function Login() {
         </button>
         <Logo className="mb-12" title="Instagram" />
         <form className="flex flex-col mb-8 gap-2 items-center w-2/3">
-          <TextInput isBlock placeholder="Username" type="text" />
-          <TextInput isBlock placeholder="Password" type="password" />
+          <TextInput
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+            isBlock
+            placeholder="Username"
+            type="text"
+          />
+          <TextInput
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            isBlock
+            placeholder="Password"
+            type="password"
+          />
           <div className="self-end mb-8">
             <a className="text-xs text-blue-500 hover:text-blue-800" href="#">
               Forgot password?
             </a>
           </div>
-          <Button isBlock color="primary">
+          <Button isBlock color="primary" onClick={handleSubmit}>
             Login
           </Button>
+          {message && <p>{message}</p>}
         </form>
         <div className="flex gap-2 items-center">
           <img src={facebook} alt="facebook" />

@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { Account } from "./model";
+import jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient();
 
@@ -30,4 +31,16 @@ export const updateAccount = async (id: string, updateData: Account) => {
     where: { id },
     data: updateData,
   });
+};
+
+export const authenAccount = async (username: string, password: string) => {
+  const user = await prisma.accounts.findUnique({ where: { username } });
+  if (!user) throw new Error("Invalid email or password");
+
+  const validPassword = await bcrypt.compare(password, user.password);
+  if (!validPassword) throw new Error("Invalid email or password");
+
+  const SECRET = "your_jwt_secret";
+
+  return jwt.sign({ name: user.id }, SECRET, { expiresIn: "1h" });
 };
