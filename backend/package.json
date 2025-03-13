@@ -5,7 +5,8 @@
   "scripts": {
     "dev-be": "nodemon --exec ts-node src/server.ts",
     "build": "tsc",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "postinstall": "npm run prisma:generate"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
