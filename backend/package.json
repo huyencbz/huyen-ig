@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev-be": "nodemon --exec ts-node src/server.ts",
-    "start": "node dist/server.js",
-    "build": "tsc && ls -la dist/",
+    "dev-be": "nodemon --exec ts-node server.ts",
+    "start": "node server.js",
+    "build": "tsc",
     "prisma:generate": "prisma generate",
     "postinstall": "npm run prisma:generate"
   },

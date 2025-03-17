@@ -14,15 +14,18 @@
     "target": "ES6",
     "module": "commonjs",
     "lib": ["ES6"],
-    "outDir": "dist",
-    "rootDir": "src",
+    "outDir": "./",
+    "rootDir": "./",
     "sourceMap": true,
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"] /* Include all TypeScript files in the src directory. */,
+  "include": [
+    "src",
+    "server.ts"
+  ] /* Include all TypeScript files in the src directory. */,
   "exclude": [
     "node_modules",
     "dist"
