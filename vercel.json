@@ -3,11 +3,13 @@
   "builds": [
     {
       "src": "frontend/dist/**/*",
-      "use": "@vercel/static"
+      "use": "@vercel/static",
+      "config": { "root": "frontend" }
     },
     {
       "src": "backend/src/server.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": { "root": "backend" }
     }
   ],
   "routes": [
