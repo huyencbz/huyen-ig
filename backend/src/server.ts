@@ -13,7 +13,7 @@ app.use(
 
 app.use(json());
 
-app.use("/accounts", accountRouters);
+app.use("/api/accounts", accountRouters);
 
 if (!process.env.VERCEL) {
   const PORT = process.env.PORT || 3002;
