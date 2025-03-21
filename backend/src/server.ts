@@ -1,15 +1,16 @@
 import express, { json } from "express";
 import cors from "cors";
 import accountRouters from "./accounts/routes";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Allow only this origin
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173", // Allow only this origin
+//     methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
+//     allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
+//   })
+// );
 
 app.use(json());
 
@@ -22,4 +23,6 @@ if (!process.env.VERCEL) {
   });
 }
 
-export default app;
+export default (req: VercelRequest, res: VercelResponse) => {
+  app(req, res);
+};

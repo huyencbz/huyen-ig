@@ -24,6 +24,7 @@
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.9.3",
+    "@vercel/node": "^5.1.14",
     "eslint": "^9.9.0",
     "globals": "^15.9.0",
     "nodemon": "^3.1.7",
