@@ -5,7 +5,7 @@ const author = {
   isOfficial: true,
   avatar: "https://randomuser.me/api/portraits/men/88.jpg",
 };
-const listUser1 = [
+const listUser = [
   {
     userInfo: {
       name: "Your story",
