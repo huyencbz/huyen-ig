@@ -6,7 +6,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 const app = express();
 const corsOptions = {
   origin: process.env.VERCEL
-    ? "https://huyen-ig-backend.vercel.app"
+    ? "https://huyen-ig-frontend.vercel.app"
     : "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
