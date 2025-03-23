@@ -3,8 +3,8 @@ import Logo from "../assets/logo.svg?react";
 import Back from "../assets/back.svg?react";
 import facebook from "../assets/facebook.svg";
 import { TextInput, Divider, Button } from "@ig/components";
-import axios from "axios";
 import { useState } from "react";
+import api from "../api";
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -20,13 +20,10 @@ function Login() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `http://localhost:3002/accounts/login`,
-        {
-          username,
-          password,
-        }
-      );
+      const response = await api.post("/accounts/login", {
+        username,
+        password,
+      });
       if (response.data.token) {
         navigate({ to: "/main" });
         localStorage.setItem("token", response.data.token);

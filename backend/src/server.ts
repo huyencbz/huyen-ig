@@ -4,13 +4,15 @@ import accountRouters from "./accounts/routes";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const app = express();
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173", // Allow only this origin
-//     methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
-//     allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
-//   })
-// );
+const corsOptions = {
+  origin: process.env.VERCEL
+    ? "https://huyen-ig-backend.vercel.app"
+    : "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 
 app.use(json());
 
