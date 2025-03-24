@@ -6,7 +6,7 @@ import DownChevron from "../assets/down_chevron.svg?react";
 import UpChevron from "../assets/up_chevron.svg?react";
 import Picture from "../assets/picture.svg?react";
 import { Photos } from "@ig/components";
-import { withAuth } from "../shared/withAuth";
+import { withAuth } from "@ig/shared";
 
 export const sources = [
   {

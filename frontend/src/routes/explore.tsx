@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, Toolbar, Photos, Search } from "@ig/components";
-import { withAuth } from "../shared/withAuth";
+import { withAuth } from "@ig/shared";
 
 export const sources = [
   {

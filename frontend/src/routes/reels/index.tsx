@@ -5,7 +5,7 @@ import { Header } from "./-Header";
 import { Menu } from "./-Menu";
 import { Video } from "./-Video";
 import { Body } from "./-Body";
-import { withAuth } from "../../shared/withAuth";
+import { withAuth } from "@ig/shared";
 
 function ReelsComponent() {
   return (

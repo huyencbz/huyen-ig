@@ -14,7 +14,7 @@ import {
   Toolbar,
   UserDiscover,
 } from "@ig/components";
-import { withAuth } from "../shared/withAuth";
+import { withAuth } from "@ig/shared";
 
 const sources = [
   {

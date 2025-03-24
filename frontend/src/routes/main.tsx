@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PostList, StoryList, Header, Toolbar } from "@ig/components";
-import { withAuth } from "../shared/withAuth";
+import { withAuth } from "@ig/shared";
 const author = {
   name: "joshua_l",
   isOfficial: true,
