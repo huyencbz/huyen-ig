@@ -3,8 +3,9 @@ import Logo from "../assets/logo.svg?react";
 import Back from "../assets/back.svg?react";
 import facebook from "../assets/facebook.svg";
 import { TextInput, Divider, Button } from "@ig/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../api";
+import { useAuth } from "../context/AuthContext";
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -14,8 +15,14 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate({ to: "/main" });
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -25,8 +32,7 @@ function Login() {
         password,
       });
       if (response.data.token) {
-        navigate({ to: "/main" });
-        localStorage.setItem("token", response.data.token);
+        login(response.data.token);
       }
     } catch (error) {
       setMessage("Login failed!");

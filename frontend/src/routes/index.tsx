@@ -1,12 +1,9 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import Logo from "../assets/logo.svg?react";
 import { Avatar, Button, Divider } from "@ig/components";
+import { withAuth } from "../shared/withAuth";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+function IndexComponent() {
   const navigate = useNavigate();
 
   return (
@@ -47,3 +44,9 @@ function Index() {
     </>
   );
 }
+
+const Index = withAuth(IndexComponent);
+
+export const Route = createFileRoute("/")({
+  component: Index,
+});

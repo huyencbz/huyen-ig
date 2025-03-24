@@ -6,10 +6,7 @@ import DownChevron from "../assets/down_chevron.svg?react";
 import UpChevron from "../assets/up_chevron.svg?react";
 import Picture from "../assets/picture.svg?react";
 import { Photos } from "@ig/components";
-
-export const Route = createFileRoute("/post")({
-  component: Post,
-});
+import { withAuth } from "../shared/withAuth";
 
 export const sources = [
   {
@@ -73,7 +70,7 @@ export const sources = [
   },
 ];
 
-function Post() {
+function PostComponent() {
   return (
     <div className="h-screen">
       <div className="flex justify-center fixed top-0 left-0 right-0 z-50 h-12">
@@ -125,3 +122,9 @@ function Post() {
     </div>
   );
 }
+
+const Post = withAuth(PostComponent);
+
+export const Route = createFileRoute("/post")({
+  component: Post,
+});

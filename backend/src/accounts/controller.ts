@@ -5,7 +5,6 @@ import {
   updateAccount,
   authenAccount,
 } from "./service";
-import { log } from "console";
 
 export const getAccount = async (req: Request, res: Response) => {
   try {

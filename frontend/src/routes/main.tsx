@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PostList, StoryList, Header, Toolbar } from "@ig/components";
+import { withAuth } from "../shared/withAuth";
 const author = {
   name: "joshua_l",
   isOfficial: true,
@@ -105,11 +106,7 @@ const postList = [
   },
 ];
 
-export const Route = createFileRoute("/main")({
-  component: Main,
-});
-
-function Main() {
+function MainComponent() {
   return (
     <Layout
       header={<Header />}
@@ -122,3 +119,9 @@ function Main() {
     </Layout>
   );
 }
+
+const Main = withAuth(MainComponent);
+
+export const Route = createFileRoute("/main")({
+  component: Main,
+});

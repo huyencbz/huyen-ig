@@ -14,6 +14,7 @@ import {
   Toolbar,
   UserDiscover,
 } from "@ig/components";
+import { withAuth } from "../shared/withAuth";
 
 const sources = [
   {
@@ -77,10 +78,7 @@ const sources = [
   },
 ];
 
-export const Route = createFileRoute("/profile")({
-  component: Profile,
-});
-function Profile() {
+function ProfileComponent() {
   return (
     <Layout
       footer={
@@ -166,3 +164,9 @@ function Profile() {
     </Layout>
   );
 }
+
+const Profile = withAuth(ProfileComponent);
+
+export const Route = createFileRoute("/profile")({
+  component: Profile,
+});

@@ -5,11 +5,9 @@ import { Header } from "./-Header";
 import { Menu } from "./-Menu";
 import { Video } from "./-Video";
 import { Body } from "./-Body";
+import { withAuth } from "../../shared/withAuth";
 
-export const Route = createFileRoute("/reels/")({
-  component: Reels,
-});
-function Reels() {
+function ReelsComponent() {
   return (
     <Layout
       footer={
@@ -28,3 +26,9 @@ function Reels() {
     </Layout>
   );
 }
+
+const Reels = withAuth(ReelsComponent);
+
+export const Route = createFileRoute("/reels/")({
+  component: Reels,
+});

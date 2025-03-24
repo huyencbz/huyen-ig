@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, Toolbar, Photos, Search } from "@ig/components";
+import { withAuth } from "../shared/withAuth";
 
 export const sources = [
   {
@@ -63,10 +64,7 @@ export const sources = [
   },
 ];
 
-export const Route = createFileRoute("/explore")({
-  component: Explore,
-});
-function Explore() {
+function ExploreComponent() {
   return (
     <Layout
       footer={
@@ -83,3 +81,9 @@ function Explore() {
     </Layout>
   );
 }
+
+const Explore = withAuth(ExploreComponent);
+
+export const Route = createFileRoute("/explore")({
+  component: Explore,
+});
