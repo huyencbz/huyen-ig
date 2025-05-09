@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { upload, saveFileInfo } from "./service";
 import { UploadedFile } from "./model";
-import { log } from "console";
 
 // Handle single file upload
 export const uploadSingleFile = (req: Request, res: Response) => {
@@ -21,7 +20,6 @@ export const uploadSingleFile = (req: Request, res: Response) => {
       const file = req.file as any;
       // Get the user ID from the JWT token (fallback to name for backward compatibility)
       const userId = req.user?.id;
-      console.log(req.body);
       const fileData: UploadedFile = {
         key: file.key,
         location: file.location,
