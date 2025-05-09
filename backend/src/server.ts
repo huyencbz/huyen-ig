@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import accountRouters from "./accounts/routes";
+import uploadRouters from "./uploads/routes";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors(corsOptions));
 app.use(json());
 
 app.use("/api/accounts", accountRouters);
+app.use("/api/uploads", uploadRouters);
 
 if (!process.env.VERCEL) {
   const PORT = process.env.PORT || 3002;

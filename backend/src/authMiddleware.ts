@@ -1,5 +1,14 @@
 import jwt from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
+
+// Extend the Request interface to include the 'user' property
+declare global {
+  namespace Express {
+    interface Request {
+      user?: any;
+    }
+  }
+}
 const SECRET_KEY = "your_jwt_secret";
 
 export const authenticateToken = (
@@ -20,7 +29,7 @@ export const authenticateToken = (
       res.status(403).json({ error: "Invalid token" });
       return;
     }
-    req.body.user = user;
+    req.user = user;
     next();
   });
 };

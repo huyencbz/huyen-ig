@@ -42,5 +42,8 @@ export const authenAccount = async (username: string, password: string) => {
 
   const SECRET = "your_jwt_secret";
 
-  return jwt.sign({ name: user.id }, SECRET, { expiresIn: "1h" });
+  // Create a token with the user ID (using 'id' instead of 'name' for clarity)
+  return jwt.sign({ id: user.id, name: user.username }, SECRET, {
+    expiresIn: "1h",
+  });
 };
