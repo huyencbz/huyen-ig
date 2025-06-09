@@ -63,7 +63,7 @@ function Login() {
           />
           <div className="self-end mb-8">
             <a className="text-xs text-blue-500 hover:text-blue-800" href="#">
-              Forgot password?
+              Forgot password huyen?
             </a>
           </div>
           <Button isBlock color="primary" onClick={handleSubmit}>
